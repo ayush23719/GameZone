@@ -1,32 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { React, useState } from 'react';
 
 export default function App() {
-  const [name, setName] = useState('ayush');
-  const pressHandler = () => {
-    setName('Random');
-  }
+  const [poeple, setPeople] = useState([
+    { name: 'shaun', key: '1' },
+    { name: 'yoshi', key: '2' },
+    { name: 'mario', key: '3' },
+    { name: 'luigi', key: '4' },
+    { name: 'peach', key: '5' },
+    { name: 'toad', key: '6' },
+    { name: 'bowser', key: '7' },
+  ]);
+
 
   return (
     <View style={styles.container}>
-      <Text>My name is {name}.</Text>
-      <Text></Text>
-      <TextInput style={styles.input} onChangeText={(val) => setName(val)} />
-      <View style={styles.buttonContainer}>
-        <Button title="Update State" onPress={pressHandler} />
-      </View>
-      <StatusBar style="auto" />
+      <ScrollView>
+        {poeple.map(item => (
+          <View key={item.key}>
+            <Text style={styles.item}>{item.name}</Text>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   input: {
     borderWidth: 1,
@@ -35,4 +39,10 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
   },
+  item: {
+    marginTop: 24,
+    padding: 30,
+    backgroundColor: 'pink',
+    fontSize: 24,
+  }
 });
