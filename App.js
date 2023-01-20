@@ -35,19 +35,15 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     // justifyContent: 'center',
   },
-  input: {
-    borderWidth: 1,
-    borderColor: '#777',
-    padding: 8,
-    margin: 10,
-    width: 200,
-  },
-  item: {
-    marginTop: 24,
-    padding: 30,
+  content: {
+    padding: 40,
     backgroundColor: 'pink',
-    fontSize: 24,
-    marginHorizontal: 10,
-    marginTop: 24,
+    flex: 1,
+
+  },
+  list: {
+    marginTop: 20,
+    backgroundColor: 'yellow',
+    flex: 1,
   }
 });
