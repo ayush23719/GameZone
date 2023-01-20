@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { React, useState } from 'react';
 
 export default function App() {
@@ -12,7 +12,9 @@ export default function App() {
     { name: 'bowser', id: '7' },
   ]);
 
-
+  const pressHandler = (id) => {
+    console.log(id);
+  }
   return (
     <View style={styles.container}>
       {/* FlatList is a component that is used to render a list of data in a more efficient way than using a scrollview and a bunch of views inside of it. */}
@@ -23,7 +25,9 @@ export default function App() {
         keyExtractor={(item) => item.id}
         data={poeple}
         renderItem={({ item }) => (
-          <Text style={styles.item}>{item.name}</Text>
+          <TouchableOpacity onPress={() => pressHandler()}>
+            <Text style={styles.item}>{item.name}</Text>
+          </TouchableOpacity>
         )}
       />
 
