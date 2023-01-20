@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      //FlatList is a component that is used to render a list of data in a more efficient way than using a scrollview and a bunch of views inside of it.
+      {/* FlatList is a component that is used to render a list of data in a more efficient way than using a scrollview and a bunch of views inside of it. */}
       <FlatList
         data={poeple}
         renderItem={({ item }) => (
