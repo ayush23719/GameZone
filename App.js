@@ -2,46 +2,29 @@ import { StyleSheet, Text, View, ScrollView, FlatList, TouchableOpacity } from '
 import { React, useState } from 'react';
 
 export default function App() {
-  const [poeple, setPeople] = useState([
-    { name: 'shaun', id: '1' },
-    { name: 'yoshi', id: '2' },
-    { name: 'mario', id: '3' },
-    { name: 'luigi', id: '4' },
-    { name: 'peach', id: '5' },
-    { name: 'toad', id: '6' },
-    { name: 'bowser', id: '7' },
-  ]);
-
-  const pressHandler = (id) => {
-    console.log(id);
-    setPeople((prevPeople) => {
-      return prevPeople.filter((person) => person.id != id);
-    }
-    );
-  }
   return (
     <View style={styles.container}>
-      {/* FlatList is a component that is used to render a list of data in a more efficient way than using a scrollview and a bunch of views inside of it. */}
-      {/* keyExtractor prop is used to specify unique key for each item i.e. id in this case. */}
-      {/* numColumns prop is used to split the list into multiple columns.  */}
-      <FlatList
-        numColumns={2}
-        keyExtractor={(item) => item.id}
-        data={poeple}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => pressHandler(item.id)}>
-            <Text style={styles.item}>{item.name}</Text>
-          </TouchableOpacity>
-        )}
-      />
+      {/* header */}
+      <View style={styles.content}>
+        {/* to do form */}
+        <View style={styles.list}>
+          <FlatList
+            data={[
+              { text: 'buy coffee', key: '1' },
+              { text: 'create an app', key: '2' },
+              { text: 'play on the switch', key: '3' },
+            ]}
 
-      {/* <ScrollView>
-        {poeple.map(item => (
-          <View key={item.key}>
-            <Text style={styles.item}>{item.name}</Text>
-          </View>
-        ))}
-      </ScrollView> */}
+            renderItem={({ item }) => (
+              <TouchableOpacity>
+                <Text>{item.text}</Text>
+              </TouchableOpacity>
+            )}
+          />
+        </View>
+
+
+      </View>
     </View>
   );
 }
