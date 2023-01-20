@@ -17,7 +17,9 @@ export default function App() {
     <View style={styles.container}>
       {/* FlatList is a component that is used to render a list of data in a more efficient way than using a scrollview and a bunch of views inside of it. */}
       {/* keyExtractor prop is used to specify unique key for each item i.e. id in this case. */}
+      {/* numColumns prop is used to split the list into multiple columns.  */}
       <FlatList
+        numColumns={2}
         keyExtractor={(item) => item.id}
         data={poeple}
         renderItem={({ item }) => (
@@ -54,5 +56,7 @@ const styles = StyleSheet.create({
     padding: 30,
     backgroundColor: 'pink',
     fontSize: 24,
+    marginHorizontal: 10,
+    marginTop: 24,
   }
 });
