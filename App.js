@@ -10,6 +10,7 @@ export default function App() {
     'Pacifico': require('./assets/fonts/Pacifico-Regular.ttf'),
   });
   const [todos, setTodos] = useState([
+    // sample todos
     { text: 'Buy Cookies', key: '1' },
     { text: 'Code the Web', key: '2' },
     { text: 'Watch Anime', key: '3' },
