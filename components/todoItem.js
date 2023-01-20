@@ -10,14 +10,16 @@ export default function TodoItem({ item, pressHandler }) {
 }
 const styles = StyleSheet.create({
     item: {
-        fontSize: 30,
-        fontSize: 20,
-        height: 50,
+        fontWeight: 'bold',
+        color: '#41436A',
+        fontFamily: 'Poppins',
+        fontSize: 27,
+        height: 80,
         paddingLeft: 22,
-        paddingTop: 10,
+        paddingTop: 20,
         marginTop: 16,
         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
-        borderRadius: 30,
+        borderRadius: 40,
         backgroundColor: '#FFE4C7'
     }
 });

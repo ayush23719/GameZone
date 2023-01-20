@@ -8,6 +8,7 @@ export default function App() {
     'Nunito': require('./assets/fonts/Nunito-VariableFont_wght.ttf'),
     'Kanit': require('./assets/fonts/Kanit-Regular.ttf'),
     'Pacifico': require('./assets/fonts/Pacifico-Regular.ttf'),
+    'Poppins': require('./assets/fonts/Poppins-Regular.ttf'),
   });
   const [todos, setTodos] = useState([
     // sample todos

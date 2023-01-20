@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
     },
     greet: {
         textAlign: 'center',
-        c
+        fontFamily: 'Pacifico',
     },
     name: {
         paddingTop: 50,
         textAlign: 'center',
         fontWeight: 'bold',
-        fontFamily: 'Nunito',
+        fontFamily: 'Poppins',
     }
 });
