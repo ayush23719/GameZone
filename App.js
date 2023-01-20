@@ -9,6 +9,7 @@ export default function App() {
     'Kanit': require('./assets/fonts/Kanit-Regular.ttf'),
     'Pacifico': require('./assets/fonts/Pacifico-Regular.ttf'),
     'Poppins': require('./assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf')
   });
   const [todos, setTodos] = useState([
     // sample todos

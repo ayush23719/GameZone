@@ -10,10 +10,9 @@ export default function TodoItem({ item, pressHandler }) {
 }
 const styles = StyleSheet.create({
     item: {
-        fontWeight: 'bold',
         color: '#41436A',
-        fontFamily: 'Poppins',
-        fontSize: 27,
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 20,
         height: 80,
         paddingLeft: 22,
         paddingTop: 20,

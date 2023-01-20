@@ -4,10 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Header() {
     return (
         <View style={styles.header}>
-            <Text style={styles.title}>
-                <Text style={styles.greet}>Hello, </Text>
-                <Text style={styles.name}>Ayush </Text>
-            </Text>
+
+            <Text style={styles.greet}>Hello, </Text>
+            <Text style={styles.name}>Ayush </Text>
         </View>
     )
 }
@@ -15,26 +14,26 @@ export default function Header() {
 const styles = StyleSheet.create({
     header: {
         height: 190,
-        paddingTop: 38,
+        paddingTop: 30,
         backgroundColor: '#FFC872',
         borderBottomLeftRadius: 40,
         borderBottomRightRadius: 40
     },
-    title: {
-        paddingTop: 20,
+
+    greet: {
         textAlign: 'center',
         color: 'black',
-        fontSize: 30,
-
-    },
-    greet: {
+        fontSize: 40,
         textAlign: 'center',
         fontFamily: 'Pacifico',
     },
     name: {
-        paddingTop: 50,
+        textAlign: 'center',
+        color: 'black',
+        fontSize: 45,
         textAlign: 'center',
         fontWeight: 'bold',
-        fontFamily: 'Poppins',
+        color: '#41436A',
+        fontFamily: 'Poppins-SemiBold',
     }
 });
