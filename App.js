@@ -3,13 +3,13 @@ import { React, useState } from 'react';
 
 export default function App() {
   const [poeple, setPeople] = useState([
-    { name: 'shaun', key: '1' },
-    { name: 'yoshi', key: '2' },
-    { name: 'mario', key: '3' },
-    { name: 'luigi', key: '4' },
-    { name: 'peach', key: '5' },
-    { name: 'toad', key: '6' },
-    { name: 'bowser', key: '7' },
+    { name: 'shaun', id: '1' },
+    { name: 'yoshi', id: '2' },
+    { name: 'mario', id: '3' },
+    { name: 'luigi', id: '4' },
+    { name: 'peach', id: '5' },
+    { name: 'toad', id: '6' },
+    { name: 'bowser', id: '7' },
   ]);
 
 
@@ -17,6 +17,7 @@ export default function App() {
     <View style={styles.container}>
       {/* FlatList is a component that is used to render a list of data in a more efficient way than using a scrollview and a bunch of views inside of it. */}
       <FlatList
+        keyExtractor={(item) => item.id}
         data={poeple}
         renderItem={({ item }) => (
           <Text style={styles.item}>{item.name}</Text>
