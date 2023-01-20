@@ -23,13 +23,13 @@ export default function App() {
         )}
       />
 
-      <ScrollView>
+      {/* <ScrollView>
         {poeple.map(item => (
           <View key={item.key}>
             <Text style={styles.item}>{item.name}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollView> */}
     </View>
   );
 }
