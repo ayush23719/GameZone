@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
     greet: {
         textAlign: 'center',
-        fontFamily: 'Pacifico',
+        c
     },
     name: {
         paddingTop: 50,

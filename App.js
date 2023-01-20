@@ -48,12 +48,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f7ecd7',
+    backgroundColor: '#FFF9EB',
 
   },
   content: {
     padding: 40,
-    backgroundColor: '#f7ecd7',
+    backgroundColor: '#FFF9EB',
     flex: 1,
 
   },
