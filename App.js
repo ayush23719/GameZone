@@ -3,6 +3,7 @@ import { React, useState, useCallback } from 'react';
 import Header from './components/header';
 import { useFonts } from 'expo-font';
 import TodoItem from './components/todoItem';
+import Modal from './components/modal';
 export default function App() {
   const [fontsLoaded] = useFonts({
     'Nunito': require('./assets/fonts/Nunito-VariableFont_wght.ttf'),
@@ -48,9 +49,9 @@ export default function App() {
             )}
           />
         </View>
-
-
       </View>
+      <Modal />
+
     </View>
   );
 }
