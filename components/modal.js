@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 export default function NewItem() {
     const [modalOpen, setModalOpen] = React.useState(false);
     return (
@@ -20,7 +19,6 @@ export default function NewItem() {
 
                 <Text style={styles.btnText}>
 
-                    <FontAwesomeIcon icon={faPlus} />
                 </Text>
             </Pressable>
         </View>
