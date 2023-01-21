@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         height: 80,
         paddingLeft: 22,
-        paddingTop: 20,
+        paddingTop: 25,
         marginTop: 16,
         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
         borderRadius: 40,
