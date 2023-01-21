@@ -13,9 +13,9 @@ export default function App() {
   });
   const [todos, setTodos] = useState([
     // sample todos
-    { text: 'Buy Cookies', key: '1' },
-    { text: 'Code the Web', key: '2' },
-    { text: 'Watch Anime', key: '3' },
+    { text: 'Attendence', key: '1' },
+    { text: 'Sessional Marks', key: '2' },
+    { text: 'Mentor', key: '3' },
   ]);
 
   const onLayoutRootView = useCallback(async () => {
