@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
-
+import Icon from "react-native-dynamic-vector-icons";
 export default function NewItem() {
     const [modalOpen, setModalOpen] = React.useState(false);
     return (
@@ -17,9 +17,7 @@ export default function NewItem() {
                 style={styles.btn}
                 onPress={() => setModalOpen(true)}>
 
-                <Text style={styles.btnText}>
-
-                </Text>
+                <Icon name="plus" type="AntDesign" size={50} color="white" />
             </Pressable>
         </View>
     );
