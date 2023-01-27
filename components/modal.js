@@ -1,21 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
+import { StyleSheet, Text, View, Modal } from 'react-native';
 import Icon from "react-native-dynamic-vector-icons";
 export default function NewItem() {
     const [modalOpen, setModalOpen] = React.useState(false);
     return (
         <View style={styles.container}>
-            <Modal visible={modalOpen} animationType='slide'>
+            <Modal visible={modalOpen} animationType='slide' style={styles.modalBox} transparent={true}>
                 <View style={styles.modalContent}>
                     <Text>Modal Content</Text>
-                    <Pressable onPress={() => setModalOpen(false)}>
-                        <Text>X</Text>
-                    </Pressable>
+
+                    <Icon
+                        style={styles.cross}
+                        name="circle-with-cross"
+                        type="Entypo"
+                        size={50}
+                        color="#ff5050"
+                        onPress={() => setModalOpen(false)}
+                    />
                 </View>
-            </Modal>
+            </Modal >
 
             <Icon
-                style={styles.plus}
                 name="pluscircle"
                 type="AntDesign"
                 size={60}
@@ -23,18 +28,34 @@ export default function NewItem() {
                 onPress={() => setModalOpen(true)}
             />
 
-        </View>
+        </View >
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-
+        backgroundColor: 'rgba(0,0,0,0.5)',
         justifyContent: 'center',
         alignItems: 'center',
     },
+    modalBox: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#606070',
+    },
     modalContent: {
         flex: 1,
+
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    cross: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+
     },
     btn: {
         height: 70,
