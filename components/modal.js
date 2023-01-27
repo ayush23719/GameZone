@@ -1,8 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, Modal } from 'react-native';
 import Icon from "react-native-dynamic-vector-icons";
+import BackgroundColor from 'react-native-background-color';
 export default function NewItem() {
     const [modalOpen, setModalOpen] = React.useState(false);
+    const [backgroundColor, setBackgroundColor] = React.useState('#54a0b8');
+    const toggleBackgroundColor = () => {
+        if (backgroundColor === '#54a0b8') {
+            BackgroundColor.setColor('#ff5050');
+            setBackgroundColor('#ff5050');
+        } else {
+            BackgroundColor.setColor('#54a0b8');
+            setBackgroundColor('#54a0b8');
+        }
+    }
     return (
         <View style={styles.container}>
             <Modal visible={modalOpen} animationType='slide' style={styles.modalBox} transparent={true}>
@@ -25,7 +36,7 @@ export default function NewItem() {
                 type="AntDesign"
                 size={60}
                 color="#54a0b8"
-                onPress={() => setModalOpen(true)}
+                onPress={() => { setModalOpen(true); toggleBackgroundColor(); }}
             />
 
         </View >
@@ -34,7 +45,6 @@ export default function NewItem() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'rgba(0,0,0,0.5)',
         justifyContent: 'center',
         alignItems: 'center',
     },
