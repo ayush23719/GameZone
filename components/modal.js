@@ -13,12 +13,16 @@ export default function NewItem() {
                     </Pressable>
                 </View>
             </Modal>
-            <Pressable
-                style={styles.btn}
-                onPress={() => setModalOpen(true)}>
 
-                <Icon name="plus" type="AntDesign" size={50} color="white" />
-            </Pressable>
+            <Icon
+                style={styles.plus}
+                name="pluscircle"
+                type="AntDesign"
+                size={60}
+                color="#54a0b8"
+                onPress={() => setModalOpen(true)}
+            />
+
         </View>
     );
 }
@@ -42,11 +46,5 @@ const styles = StyleSheet.create({
         borderRadius: 70,
         elevation: 3,
         backgroundColor: '#54a0b8',
-    },
-    btnText: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: 50,
-        color: 'white',
     },
 });
