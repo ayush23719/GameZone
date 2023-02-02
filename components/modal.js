@@ -1,19 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native';
 import Icon from "react-native-dynamic-vector-icons";
-import BackgroundColor from 'react-native-background-color';
 export default function NewItem() {
     const [modalOpen, setModalOpen] = React.useState(false);
-    const [backgroundColor, setBackgroundColor] = React.useState('#54a0b8');
-    // const toggleBackgroundColor = () => {
-    //     if (backgroundColor === '#54a0b8') {
-    //         BackgroundColor.setColor('#ff5050');
-    //         setBackgroundColor('#ff5050');
-    //     } else {
-    //         BackgroundColor.setColor('#54a0b8');
-    //         setBackgroundColor('#54a0b8');
-    //     }
-    // }
     return (
         <View style={styles.container}>
             <Modal visible={modalOpen} animationType='slide' style={styles.modalBox} transparent={true}>
@@ -39,6 +28,7 @@ export default function NewItem() {
                             color="#c4c4c4"
                             onPress={() => setModalOpen(false)}
                         />
+                        <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#41436A', fontFamily: 'Pacifico', top: 0 }}>Add New Item</Text>
                     </View>
                 </TouchableOpacity>
             </Modal >
@@ -72,23 +62,11 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         padding: 90,
         borderRadius: 40,
-        alignSelf: 'center',
-        justifyContent: 'center'
     },
     cross: {
         position: 'absolute',
         top: 10,
         right: 10,
     },
-    btn: {
-        height: 70,
-        width: 70,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 70,
-        elevation: 3,
-        backgroundColor: '#54a0b8',
-    },
+
 });
