@@ -1,23 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Modal } from 'react-native';
+import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native';
 import Icon from "react-native-dynamic-vector-icons";
 import BackgroundColor from 'react-native-background-color';
 export default function NewItem() {
     const [modalOpen, setModalOpen] = React.useState(false);
     const [backgroundColor, setBackgroundColor] = React.useState('#54a0b8');
-    const toggleBackgroundColor = () => {
-        if (backgroundColor === '#54a0b8') {
-            BackgroundColor.setColor('#ff5050');
-            setBackgroundColor('#ff5050');
-        } else {
-            BackgroundColor.setColor('#54a0b8');
-            setBackgroundColor('#54a0b8');
-        }
-    }
+    // const toggleBackgroundColor = () => {
+    //     if (backgroundColor === '#54a0b8') {
+    //         BackgroundColor.setColor('#ff5050');
+    //         setBackgroundColor('#ff5050');
+    //     } else {
+    //         BackgroundColor.setColor('#54a0b8');
+    //         setBackgroundColor('#54a0b8');
+    //     }
+    // }
     return (
         <View style={styles.container}>
             <Modal visible={modalOpen} animationType='slide' style={styles.modalBox} transparent={true}>
-                <View style={styles.modalContent}>
+                {/* <View style={styles.modalContent}>
                     <Text>Modal Content</Text>
 
                     <Icon
@@ -28,7 +28,11 @@ export default function NewItem() {
                         color="#ff5050"
                         onPress={() => setModalOpen(false)}
                     />
-                </View>
+                </View> */}
+                <TouchableOpacity style={{ backgroundColor: 'rgba(0,0,0,0.5)', flex: 1, justifyContent: 'center' }} onPress={() => setModalOpen(false)}>
+                    <View style={{ backgroundColor: "white", padding: 90, borderRadius: 9, alignSelf: 'center', justifyContent: 'center' }}>
+                    </View>
+                </TouchableOpacity>
             </Modal >
 
             <Icon
@@ -36,7 +40,7 @@ export default function NewItem() {
                 type="AntDesign"
                 size={60}
                 color="#54a0b8"
-                onPress={() => { setModalOpen(true); toggleBackgroundColor(); }}
+                onPress={() => { setModalOpen(true) }}
             />
 
         </View >
