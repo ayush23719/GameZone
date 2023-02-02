@@ -6,18 +6,6 @@ export default function NewItem() {
     return (
         <View style={styles.container}>
             <Modal visible={modalOpen} animationType='slide' style={styles.modalBox} transparent={true}>
-                {/* <View style={styles.modalContent}>
-                    <Text>Modal Content</Text>
-
-                    <Icon
-                        style={styles.cross}
-                        name="circle-with-cross"
-                        type="Entypo"
-                        size={50}
-                        color="#ff5050"
-                        onPress={() => setModalOpen(false)}
-                    />
-                </View> */}
                 <TouchableOpacity style={styles.modalBox} onPress={() => setModalOpen(false)}>
                     <View style={styles.modalContent}>
                         <Icon
@@ -28,7 +16,7 @@ export default function NewItem() {
                             color="#c4c4c4"
                             onPress={() => setModalOpen(false)}
                         />
-                        <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#41436A', fontFamily: 'Pacifico', top: 0 }}>Add New Item</Text>
+                        <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#41436A', fontFamily: 'Pacifico', top: -10 }}>Add New Item</Text>
                     </View>
                 </TouchableOpacity>
             </Modal >
@@ -58,6 +46,7 @@ const styles = StyleSheet.create({
     modalContent: {
         height: 600,
         width: 400,
+        alignSelf: 'center',
         marginTop: 300,
         backgroundColor: "white",
         padding: 90,
