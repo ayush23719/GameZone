@@ -18,6 +18,7 @@ export default function NewItem() {
                         />
                         <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#41436A', fontFamily: 'Pacifico', top: -10 }}>Add New Item</Text>
                     </View>
+
                 </TouchableOpacity>
             </Modal >
 
