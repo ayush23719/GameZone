@@ -29,8 +29,16 @@ export default function NewItem() {
                         onPress={() => setModalOpen(false)}
                     />
                 </View> */}
-                <TouchableOpacity style={{ backgroundColor: 'rgba(0,0,0,0.5)', flex: 1, justifyContent: 'center' }} onPress={() => setModalOpen(false)}>
-                    <View style={{ backgroundColor: "white", padding: 90, borderRadius: 9, alignSelf: 'center', justifyContent: 'center' }}>
+                <TouchableOpacity style={styles.modalBox} onPress={() => setModalOpen(false)}>
+                    <View style={styles.modalContent}>
+                        <Icon
+                            style={styles.cross}
+                            name="cross"
+                            type="Entypo"
+                            size={40}
+                            color="#c4c4c4"
+                            onPress={() => setModalOpen(false)}
+                        />
                     </View>
                 </TouchableOpacity>
             </Modal >
@@ -53,23 +61,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     modalBox: {
+        backgroundColor: 'rgba(0,0,0,0.5)',
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#606070',
+        justifyContent: 'center'
     },
     modalContent: {
-        flex: 1,
-
-        justifyContent: 'center',
-        alignItems: 'center',
-
+        height: 600,
+        width: 400,
+        marginTop: 300,
+        backgroundColor: "white",
+        padding: 90,
+        borderRadius: 40,
+        alignSelf: 'center',
+        justifyContent: 'center'
     },
     cross: {
         position: 'absolute',
-        top: 0,
-        right: 0,
-
+        top: 10,
+        right: 10,
     },
     btn: {
         height: 70,
