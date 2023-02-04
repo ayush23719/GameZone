@@ -4,14 +4,14 @@ import Header from './components/header';
 import { useFonts } from 'expo-font';
 import TodoItem from './components/todoItem';
 import NewItemModal from './components/modal';
-import AddItem from './components/addNewItem';
 export default function App() {
   const [fontsLoaded] = useFonts({
     'Nunito': require('./assets/fonts/Nunito-VariableFont_wght.ttf'),
     'Kanit': require('./assets/fonts/Kanit-Regular.ttf'),
     'Pacifico': require('./assets/fonts/Pacifico-Regular.ttf'),
     'Poppins': require('./assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf')
+    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
+    'ubuntu': require('./assets/fonts/Ubuntu-Regular.ttf'),
   });
   const [todos, setTodos] = useState([
     // sample todos
@@ -19,7 +19,14 @@ export default function App() {
     { text: 'Code the Web', key: '2' },
     { text: 'Watch Anime', key: '3' },
   ]);
-
+  const submitHandler = (text) => {
+    setTodos((prevTodos) => {
+      return [
+        { text: text, key: Math.random().toString() },
+        ...prevTodos
+      ];
+    });
+  }
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
       await SplashScreen.hideAsync();
@@ -50,9 +57,7 @@ export default function App() {
             )}
           />
         </View>
-        <NewItemModal>
-          <AddItem />
-        </NewItemModal>
+        <NewItemModal submitHandler={submitHandler} />
       </View>
 
 

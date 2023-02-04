@@ -1,8 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Modal, TouchableOpacity, TextInput } from 'react-native';
+import { useState } from 'react';
 import Icon from "react-native-dynamic-vector-icons";
 
-export default function NewItem() {
+export default function NewItem({ submitHandler }) {
+    const [text, setText] = useState('');
+    const changeHandler = (val) => {
+        setText(val);
+    }
+
     const [modalOpen, setModalOpen] = React.useState(false);
     return (
         <View style={styles.container}>
@@ -17,7 +23,11 @@ export default function NewItem() {
                             color="#c4c4c4"
                             onPress={() => setModalOpen(false)}
                         />
-                        <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#41436A', fontFamily: 'Pacifico', top: -10 }}>Add New Item</Text>
+                        <Text style={styles.textHeading}>Add New Item</Text>
+                        <TextInput style={styles.input} placeholder='New Item...' onChangeText={changeHandler} />
+                        <TouchableOpacity style={styles.button} onPress={() => submitHandler(text)}>
+                            <Text style={styles.buttonText}>Add Item</Text>
+                        </TouchableOpacity>
                     </View>
 
                 </TouchableOpacity>
@@ -60,5 +70,39 @@ const styles = StyleSheet.create({
         top: 10,
         right: 10,
     },
-
+    input: {
+        marginLeft: -40,
+        width: 300,
+        marginTop: 70,
+        paddingHorizontal: 8,
+        paddingVertical: 6,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+        fontSize: 20,
+        fontFamily: 'Poppins-SemiBold',
+        color: '#41436A'
+    },
+    button: {
+        height: 60,
+        borderRadius: 40,
+        backgroundColor: '#54a0b8',
+        padding: 20,
+        marginTop: 20,
+        width: 200,
+        alignSelf: 'center'
+    },
+    buttonText: {
+        marginTop: -7,
+        color: 'white',
+        fontSize: 23,
+        textAlign: 'center',
+        fontFamily: 'Poppins-SemiBold'
+    },
+    textHeading: {
+        marginTop: -40,
+        fontSize: 30,
+        textAlign: 'center',
+        fontFamily: 'Ubuntu',
+        color: '#41436A'
+    }
 });
