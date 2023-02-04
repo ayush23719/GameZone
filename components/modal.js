@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         marginTop: -40,
         fontSize: 30,
         textAlign: 'center',
-        fontFamily: 'Ubuntu',
+        fontFamily: 'Pacifico',
         color: '#41436A'
     }
 });
