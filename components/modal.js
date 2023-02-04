@@ -25,12 +25,12 @@ export default function NewItem({ submitHandler }) {
                         />
                         <Text style={styles.textHeading}>Add New Item</Text>
                         <TextInput style={styles.input} placeholder='New Item...' onChangeText={changeHandler} />
-                        <TouchableOpacity style={styles.button} onPress={() => submitHandler(text)}>
+                        <TouchableOpacity style={styles.button} onPress={() => { submitHandler(text); setModalOpen(false) }}>
                             <Text style={styles.buttonText}>Add Item</Text>
                         </TouchableOpacity>
                     </View>
 
-                </TouchableOpacity>
+                </TouchableOpacity >
 
             </Modal >
 
