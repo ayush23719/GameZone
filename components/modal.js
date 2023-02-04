@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native';
 import Icon from "react-native-dynamic-vector-icons";
+
 export default function NewItem() {
     const [modalOpen, setModalOpen] = React.useState(false);
     return (
@@ -20,6 +21,7 @@ export default function NewItem() {
                     </View>
 
                 </TouchableOpacity>
+
             </Modal >
 
             <Icon
